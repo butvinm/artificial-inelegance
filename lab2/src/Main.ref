@@ -1,0 +1,124 @@
+*$FROM LibraryEx
+$EXTERN ArgList, ExistFile, Trim, Map;
+
+*$FROM lib/Shell
+$EXTERN Shell;
+
+*$FROM lib/Utils
+$EXTERN Split, Title, Filter, OneOf;
+
+
+$ENTRY Go {
+  = <ArgList> : {
+    (e.Executable) (e.OntologyPath)
+      = <ExistFile e.OntologyPath> : {
+        True = <StartPoemAssistant e.OntologyPath>;
+        False = <Prout 'File ' e.OntologyPath ' does not exist'> <Exit 1>;
+      };
+
+    (e.Executable) e._ = <Prout 'Usage: ' e.Executable ' ONTOLOGY_FILE>'> <Exit 1>;
+  };
+}
+
+
+StartPoemAssistant {
+  e.OntologyPath
+    = <Prout
+      '>> Hi! I`m your personal assistant for awesome DDLC game.\n'
+      '   I can help you with poem writing. Just say which girl you`d like to charm:'
+    > :
+    = <AskGirl (e.OntologyPath)> : {
+      None = <Exit 0>;
+      e.Girl
+        = <Prout
+          '>> Great! I`ll help you to charm ' e.Girl '.\n'
+          '   Send me words you have and I`ll suggest which are the best for her.\n'
+          '   Type "exit" to finish.'
+        > :
+        = <StartWordsSuggestion (e.OntologyPath) e.Girl> : e.SuggestedWords
+        = <Prout e.SuggestedWords>;
+    };
+}
+
+
+AskGirl {
+  (e.OntologyPath) /* empty */ = <AskGirl (e.OntologyPath) 3>;
+
+  (e.OntologyPath) 0
+    = <Prout '>> Sorry, I cannot take it anymore, dummy'> :
+    = None;
+
+  (e.OntologyPath) s.Attempts
+    = <Card> : e.Girl
+    = <ValidateGirl (e.OntologyPath) e.Girl> : {
+      True = e.Girl;
+      False
+        = <Prout
+          '>> Sorry, I don`t know ' e.Girl '.\n'
+          '   You can choose one of the following names:'
+        > :
+        = <Map { (e.Name) = <Prout '   - ' <Title e.Name>> } <ListCanLove (e.OntologyPath)>> :
+        = <Prout '>> Please, try again:'> :
+        = <AskGirl (e.OntologyPath) <Sub s.Attempts 1>>;
+    };
+}
+
+
+StartWordsSuggestion {
+  (e.OntologyPath) e.Girl
+    = <GetRelatedWords (e.OntologyPath) e.Girl> : e.RelatedWords
+    = <Split ' ' <Trim <Card>>> : {
+      ('exit') = <Prout 'I had great time with you. Goodbye!'> <Exit 0>;
+      e.Words
+        = <Filter
+          { t.Item = <OneOf t.Item e.RelatedWords> }
+          e.Words
+        > : {
+          ()
+            = <Prout
+              '>> I cannot find any words related to ' e.Girl ' >_<.\n'
+              '   Please, send me another words:'
+            > :
+            = <StartWordsSuggestion (e.OntologyPath) e.Girl>;
+
+          ((e.Word) e._)
+            = <Prout
+              '>> I`ll think about ' e.Word '.\n'
+              '   Send me another word or type "exit" to finish.'
+            > :
+            = <StartWordsSuggestion (e.OntologyPath) e.Girl>;
+        };
+    }
+}
+
+
+ValidateGirl {
+  (e.OntologyPath) e.Girl
+    = <Trim <Lower e.Girl>> : e.Girl^
+    = <QueryOntology (e.OntologyPath) 'character(' e.Girl ') -> writeln(true) ; writeln(false)'> : e.Output
+    = <Trim e.Output> : {
+      'true' = True;
+      'false' = False;
+    };
+}
+
+
+ListCanLove {
+  (e.OntologyPath)
+    = <QueryOntology (e.OntologyPath) 'forall(can_love(X), writeln(X)).'> : e.Output
+    = <Map &Trim <Split '\n' <Trim e.Output>>>;
+}
+
+
+GetRelatedWords {
+  (e.OntologyPath) e.Girl
+    = <QueryOntology (e.OntologyPath) 'related_words(character(' <Lower e.Girl> '), Words), writeln(Words).'> : e.Output
+    = <Trim e.Output> : '[' e.Words ']'
+    = <Split ',' e.Words>;
+}
+
+
+QueryOntology {
+  (e.OntologyPath) e.Query
+    = <Shell 'swipl -s ' e.OntologyPath ' -g "' e.Query '" -t halt'>;
+}

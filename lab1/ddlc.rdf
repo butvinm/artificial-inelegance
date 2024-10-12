@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc/"
+     xml:base="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ddlc="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#appears -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#appears">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#at_day -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#at_day">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#author_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#author_is">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#depends_on_dedicated_poems -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#depends_on_dedicated_poems">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#in_act -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#in_act">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#kill -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#kill">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#love -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#love">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#GirlsCanLove"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#alive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#alive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#love"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Environment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Event"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#GirlsCanLove -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#GirlsCanLove">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#author_is"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#You"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Dream -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Dream">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Dream_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Dream_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Joke -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#A_Joke">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act3"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Amy_Likes_Spiders -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Amy_Likes_Spiders">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Amy_Likes_Spiders_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Amy_Likes_Spiders_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Amy_Likes_Spiders_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Bottles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Bottles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Bottles_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Bottles_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Bottles_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#CAN_YOU_HEAR_ME -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#CAN_YOU_HEAR_ME">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Dear_Sunshine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Dear_Sunshine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Dear_Sunshine_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Dear_Sunshine_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Dear_Sunshine_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Eagles_Can_Fly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Eagles_Can_Fly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Eagles_Can_Fly_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Eagles_Can_Fly_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Eagles_Can_Fly_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#First -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#First">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+        <ddlc:dedicated_to rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Appearance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Appearance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2_Appearance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2_Appearance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_Light_pt_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_Light_pt_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_Light_pt_2_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_Light_pt_2_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_Light_pt_2_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_light -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_light">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_light_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_light_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_under_the_light_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Happy_End -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Happy_End">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Happy_End_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Happy_End_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Happy_End_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Prelude"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act3"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_2_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_2_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_2_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Hole_in_Wall_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki_Request_No_Title -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki_Request_No_Title">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki_Request_No_Title_Appearance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki_Request_No_Title_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki_Request_No_Title_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsukis_Request_No_Title -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsukis_Request_No_Title">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsukis_Request_No_Title_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsukis_Request_No_Title_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsukis_Request_No_Title_Appearance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Open_Your_Third_Eye -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Open_Your_Third_Eye">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Open_Your_Third_Eye_Appearance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Open_Your_Third_Eye_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Open_Your_Third_Eye_Appearance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Percentage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Percentage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Percentage_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Percentage_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Percentage_Appearance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Prelude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Prelude"/>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#STARE_AT_THE_DOT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#STARE_AT_THE_DOT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_2_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_2_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_2_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Save_Me_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Second -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Second">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+        <ddlc:dedicated_to rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Lady_who_Knows_Everything -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Lady_who_Knows_Everything">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Lady_who_Knows_Everything_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Lady_who_Knows_Everything_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Lady_who_Knows_Everything_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Raccoon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Raccoon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Raccoon_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Raccoon_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#The_Raccoon_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act1"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Things_I_Like_About_Papa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Things_I_Like_About_Papa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Third -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Third">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YourPoem"/>
+        <ddlc:dedicated_to rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Wheel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Wheel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Wheel_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Wheel_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Wheel_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#You -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#You">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#GirlsCanLove"/>
+        <ddlc:love rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Character"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#YouCanLove"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#cut_skin_first_time -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#cut_skin_first_time">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#happy_thoughts -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#happy_thoughts">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#mdpnfbo_jrfp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#mdpnfbo_jrfp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#mdpnfbo_jrfp_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#mdpnfbo_jrfp_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#mdpnfbo_jrfp_Appearance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#PoemAppearance"/>
+        <ddlc:at_day rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        <ddlc:in_act rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Act2"/>
+        <ddlc:poems_dedication_satisfies_appearance rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ddlc:poems_dedication_satisfies_appearance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#nothing_is_real -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#nothing_is_real">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#therapy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#therapy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#SpecialPoem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ== -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ==">
+        <rdf:type rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Poem"/>
+        <ddlc:appears rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ==_Appearance"/>
+        <ddlc:author_is rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ==_Appearance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#T3BlbiBZb3VyIFRoaXJkIEV5ZQ==_Appearance"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Day4"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Sayori"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#You"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc/beloved">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Because_You_Appearance_Dedication</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#First"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Second"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Third"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Natsuki"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Ghost_Under_The_Light_Pt_2_Dedication</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#First"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Second"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#dedicated_to"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Third"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Yuri"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>MonikaKillsBeloved</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#love"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#You"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc/beloved"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#kill"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Monika"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc/beloved"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Ill_Be_Your_Beach_Appearance_Dedication</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Because_You_Appearance"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ill_Be_Your_Beach_Appearance"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Beach_Appearance_Dedication</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Ghost_Under_The_Light_Pt_2"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#poems_dedication_satisfies_appearance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/butvinm/ontologies/2024/8/ddlc#Beach_Appearance"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

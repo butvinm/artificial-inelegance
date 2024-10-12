@@ -1,0 +1,37 @@
+*$FROM LibraryEx
+$EXTERN Reduce, UnBracket, Apply;
+
+
+$ENTRY Split {
+  s.Del e.Str = <UnBracket
+    <Reduce
+      {
+        (e.Acc) s.Del = (e.Acc ());
+        () s.Chr = ((s.Chr));
+        (e.Acc (e.Word)) s.Chr = (e.Acc (e.Word s.Chr));
+      }
+      ()
+      e.Str
+    >
+  >;
+}
+
+
+$ENTRY Title {
+  /* empty */ = /* empty */;
+  s.Chr e.Rest = <Upper s.Chr> <Lower e.Rest>;
+}
+
+
+$ENTRY Filter {
+  s.Pred e.Items = <Reduce
+    {
+      (e.Acc) t.Item, <Apply s.Pred t.Item> : {
+        True = (e.Acc t.Item);
+        False = (e.Acc);
+      };
+    }
+    ()
+    e.Items
+  >;
+}
